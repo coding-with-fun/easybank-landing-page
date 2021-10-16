@@ -1,6 +1,6 @@
 .header {
     nav {
-        padding: 24px;
+        padding: 1.05625rem 1.5rem;
     }
 
     &__logo {
@@ -29,14 +29,43 @@
         a {
             font-size: 0.875rem;
             color: $grayishBlue;
+            position: relative;
+            padding-bottom: 30px;
+            transition: color 200ms ease-in-out;
 
             &:not(:last-child) {
                 margin-right: 2rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 5px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(to left, $limeGreen, $brightCyan);
+                opacity: 0;
+                transition: opacity 200ms ease-in-out;
+            }
+
+            &:hover {
+                color: $darkBlue;
+
+                &::before {
+                    opacity: 1;
+                }
             }
         }
     }
 
     .button {
         font-size: $font-sm;
+        transition: opacity 200ms ease-in-out;
+
+        &:hover {
+            opacity: 0.75;
+        }
     }
 }

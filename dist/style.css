@@ -76,7 +76,7 @@ button,
 }
 
 .header nav {
-  padding: 24px;
+  padding: 1.05625rem 1.5rem;
 }
 
 .header__logo img {
@@ -98,13 +98,46 @@ button,
 .header__links a {
   font-size: 0.875rem;
   color: #9698a6;
+  position: relative;
+  padding-bottom: 30px;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }
 
 .header__links a:not(:last-child) {
   margin-right: 2rem;
 }
 
+.header__links a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#31d35c), to(#2bb7da));
+  background: linear-gradient(to left, #31d35c, #2bb7da);
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+
+.header__links a:hover {
+  color: #2d314d;
+}
+
+.header__links a:hover::before {
+  opacity: 1;
+}
+
 .header .button {
   font-size: 0.875rem;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+
+.header .button:hover {
+  opacity: 0.75;
 }
 /*# sourceMappingURL=style.css.map */
